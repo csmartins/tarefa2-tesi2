@@ -77,7 +77,7 @@ b4 = tf.Variable(tf.random_normal([10], stddev=0.35))
 
 # hidden_layer value
 #hidden_layer = tf.nn.softmax(tf.matmul(x, W1) + b1)
-hidden_layer1 = tf.nn.tanh(tf.matmul(x, W1) + b1)  #Mudamos de softmax para sigmoid
+hidden_layer1 = tf.nn.sigmoid(tf.matmul(x, W1) + b1)  #Mudamos de softmax para sigmoid
 hidden_layer2 = tf.nn.sigmoid(tf.matmul(hidden_layer1, W2) + b2)  #Mudamos de softmax para sigmoid
 hidden_layer3 = tf.nn.sigmoid(tf.matmul(hidden_layer2, W3) + b3)
 
@@ -85,10 +85,10 @@ hidden_layer3 = tf.nn.sigmoid(tf.matmul(hidden_layer2, W3) + b3)
 #sigmoid, tanh, sigmoid: 0.481
 #tanh, sigmoid, sigmoid: 0.488
 #tanh, tanh, sigmoid: 0.496
-#tanh, sigmoid, tanh: 
-#sigmoid, tanh, tanh: 
-#tanh, tanh, tanh:
-#sigmoid, sigmoid, sigmoid: 
+#tanh, sigmoid, tanh: 0.486
+#sigmoid, tanh, tanh: 0.51
+#tanh, tanh, tanh: 0.486
+#sigmoid, sigmoid, sigmoid: 0.411
 
 #usando tann conseguimos 26.9%
 #hidden_layer1 = tf.nn.tanh(tf.matmul(x, W1) + b1)  #Tentando usar Tanh
